@@ -1,0 +1,70 @@
+<div class="animated fadeIn">
+  <div class="row">
+    <div class="col-md-6">
+      <div class="card">
+        <div class="card-header">
+          <strong>{{ title }}</strong>
+        </div>
+        <div class="card-body">
+          <form (ngSubmit) ="onClickSubmit()" [formGroup]="Cardform">
+            <div class="form-group row">
+              <label class="col-md-3 col-form-label">Card Number</label>
+              <div class="col-md-9">
+                <input type="text" formControlName ="number" required class="form-control" placeholder="Card Number"/>
+                <span *ngIf="(Cardform.get('number').touched ||
+                  Cardform.get('number').dirty) &&
+                  Cardform.get('number').errors"  class="help-block alert-danger">
+                    <span *ngIf="Cardform.get('number').errors.required">
+                    *
+                    </span>
+                    <span *ngIf="Cardform.get('number').errors.minlength ||
+                      Cardform.get('number').errors.maxlength">
+                      Number must be 16 char length
+                    </span>
+                </span>
+              </div>
+            </div>
+            <div class="form-group row">
+              <label class="col-md-3 col-form-label">Card Expiry</label>
+              <div class="col-md-9">
+                <input type="text" formControlName="expiry" class="form-control" placeholder="Card Expiry"  />
+                <span class="help-block help-block alert-danger" *ngIf="(Cardform.get('expiry').touched ||
+                  Cardform.get('expiry').dirty) &&
+                  Cardform.get('expiry').errors" >
+                    <span *ngIf="Cardform.get('expiry').errors.required">
+                    *
+                    </span>
+                    <span *ngIf="Cardform.get('expiry').errors.minlength ||
+                      Cardform.get('expiry').errors.maxlength">
+                      Expiry must be 5 char length
+                    </span>
+                </span>
+              </div>
+            </div>
+            <div class="form-group row">
+              <label class="col-md-3 col-form-label">cvv</label>
+              <div class="col-md-9">
+                <input type="text" formControlName="cvv" class="form-control" placeholder="cvv"  />
+                <span class="help-block alert-danger" *ngIf="(Cardform.get('cvv').touched ||
+                  Cardform.get('cvv').dirty) &&
+                  Cardform.get('cvv').errors">
+                    <span *ngIf="Cardform.get('cvv').errors.required">
+                    *
+                    </span>
+                    <span *ngIf="Cardform.get('cvv').errors.minlength ||
+                      Cardform.get('cvv').errors.maxlength">
+                      cvv must be 5 char length
+                    </span>
+                </span>
+              </div>
+            </div>
+            <div class="card-footer">
+              <button type="submit" value="submit" [disabled]="!Cardform.valid" class="btn btn-sm btn-primary"><i class="fa fa-dot-circle-o"></i> Submit</button>
+              <button type="reset" (click)="onClickRest()" class="btn btn-sm btn-danger"><i class="fa fa-ban"></i> Reset</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div><!--/.col-->
+  </div><!--/.row-->
+</div>

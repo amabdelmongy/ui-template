@@ -1,0 +1,33 @@
+<div class="animated fadeIn">
+  <div class="row">
+    <div class="col-lg-12">
+      <div class="card">
+        <div class="card-header">
+          <i class="fa fa-align-justify"></i> {{ title }}
+        </div>
+        <div class="card-body">
+          <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">Payment Id</th>
+                <th scope="col">number</th>
+                <th scope="col">Expiry</th>
+                <th scope="col">cvv</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let item of items">
+                <td>{{item.paymentId}}</td>
+                <td>{{item.number}}</td>
+                <td>{{item.expiry}}</td>
+                <td>{{item.cvv}}</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+    <!--/.col-->
+  </div>
+  <!--/.row-->
+</div>
