@@ -12,9 +12,9 @@ export class HttpRequestInterceptorMock implements HttpInterceptor {
               Observable<HttpEvent<any>> {
         if (request.url){
             console.log('Intercepted httpCall' + request.url);
-            if(request.url.indexOf(`payment/payment-details`) > -1) {
+            if(request.url.indexOf(`payment-details`) > -1) {
                 return of(new HttpResponse({ status: 200, body: mockCards }));
-            } else if (request.url.indexOf('payment/request-payment/') > -1) {
+            } else if (request.url.indexOf('request-payment') > -1) {
                 return of(new HttpResponse({ status: 200, body: "saved" }));
             }
         }
