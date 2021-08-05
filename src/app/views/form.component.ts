@@ -25,13 +25,12 @@ export class FormComponent {
   }
 
   Submit() {
-    console.log(this.Cardform.getRawValue());
     this.apiService.requestPayment(this.Cardform.getRawValue())
     .subscribe(data => {
-      this.toastr.success("Saved data");
+      this.toastr.success('Saved data');
     },
     (error) => {
-      this.toastr.error("Error in Save data", error.message);
+      this.toastr.error('Error in Save data', error.message);
     });
   }
 

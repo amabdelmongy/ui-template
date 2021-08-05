@@ -6,7 +6,7 @@
           <strong>{{ title }}</strong>
         </div>
         <div class="card-body">
-          <form (ngSubmit) ="onClickSubmit()" [formGroup]="Cardform">
+          <form (ngSubmit) ="Submit()" [formGroup]="Cardform">
             <div class="form-group row">
               <label class="col-md-3 col-form-label">Card Number</label>
               <div class="col-md-9">
@@ -59,8 +59,8 @@
               </div>
             </div>
             <div class="card-footer">
-              <button type="submit" value="submit" [disabled]="!Cardform.valid" class="btn btn-sm btn-primary"><i class="fa fa-dot-circle-o"></i> Submit</button>
-              <button type="reset" (click)="onClickRest()" class="btn btn-sm btn-danger"><i class="fa fa-ban"></i> Reset</button>
+              <button type="submit" [disabled]="!Cardform.valid" class="btn btn-sm btn-primary"><i class="fa fa-dot-circle-o"></i> Submit</button>
+              <button type="reset" (click)="Rest()" class="btn btn-sm btn-danger"><i class="fa fa-ban"></i> Reset</button>
             </div>
           </form>
         </div>

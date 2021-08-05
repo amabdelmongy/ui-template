@@ -6,6 +6,7 @@ import {HTTP_INTERCEPTORS} from '@angular/common/http';
 import {HttpRequestInterceptorMock} from './services/http-request-interceptor.mock';
 import { mockCards } from './models/mock.card';
 import { ToastrModule, ToastrService } from 'ngx-toastr';
+import { AppConfigService } from './services/app-config.service';
 
 describe('Table component', () => {
   let tableComponent: TableComponent;
@@ -22,6 +23,7 @@ describe('Table component', () => {
         ToastrModule.forRoot()
       ],
       providers: [
+        AppConfigService,
         {
           provide: HTTP_INTERCEPTORS,
           useClass: HttpRequestInterceptorMock,

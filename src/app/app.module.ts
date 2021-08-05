@@ -1,5 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { APP_INITIALIZER, NgModule } from '@angular/core';
 import { LocationStrategy, HashLocationStrategy } from '@angular/common';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { IconModule, IconSetModule, IconSetService } from '@coreui/icons-angular';
@@ -28,6 +28,8 @@ import { ToastrModule } from 'ngx-toastr';
 import { NgProgressModule } from 'ngx-progressbar';
 import { NgProgressHttpModule } from 'ngx-progressbar/http';
 import { PerfectScrollbarModule } from 'ngx-perfect-scrollbar';
+import { AppConfigService } from './views/services/app-config.service';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   imports: [
@@ -43,7 +45,8 @@ import { PerfectScrollbarModule } from 'ngx-perfect-scrollbar';
     IconSetModule.forRoot(),
     ToastrModule.forRoot({positionClass :'toast-bottom-right'}),
     NgProgressModule,
-    NgProgressHttpModule
+    NgProgressHttpModule,
+    HttpClientModule
   ],
   declarations: [
     AppComponent,
@@ -56,7 +59,17 @@ import { PerfectScrollbarModule } from 'ngx-perfect-scrollbar';
       provide: LocationStrategy,
       useClass: HashLocationStrategy
     },
-    IconSetService
+    IconSetService,
+    {
+      provide: APP_INITIALIZER,
+      multi: true,
+      deps: [AppConfigService],
+      useFactory: (appConfigService: AppConfigService) => {
+        return () => {
+          return appConfigService.loadAppConfig();
+        };
+      }
+    }
   ],
   bootstrap: [ AppComponent ]
 })

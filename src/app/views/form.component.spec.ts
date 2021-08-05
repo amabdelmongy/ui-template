@@ -6,6 +6,7 @@ import {HttpClientTestingModule} from '@angular/common/http/testing';
 import {HTTP_INTERCEPTORS} from '@angular/common/http';
 import {HttpRequestInterceptorMock}from './services/http-request-interceptor.mock';
 import { ToastrModule, ToastrService } from 'ngx-toastr';
+import { AppConfigService } from './services/app-config.service';
 
 describe('Form formComponent', () => {
   let formComponent: FormComponent;
@@ -32,7 +33,8 @@ describe('Form formComponent', () => {
         {
           provide: ToastrService,
           useValue: jasmine.createSpyObj('ToastrService', ['success', 'error'])
-        }
+        },
+        AppConfigService
        ]
     }).compileComponents();
 

@@ -2,8 +2,6 @@
 import { CommonModule } from '@angular/common';
 import { FormBuilder, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
 import { NgModule } from '@angular/core';
-import { HttpClientModule } from '@angular/common/http';
-
 import { FormComponent } from './form.component';
 import { TableComponent } from './table.component';
 import { ViewsRoutingModule } from './views-routing.module';
@@ -16,7 +14,6 @@ import { NgProgressHttpModule } from 'ngx-progressbar/http';
     CommonModule,
     FormsModule,
     ViewsRoutingModule,
-    HttpClientModule,
     ReactiveFormsModule,
     NgProgressModule,
     NgProgressHttpModule

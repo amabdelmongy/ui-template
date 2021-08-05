@@ -1,7 +1,8 @@
-import { Injectable } from '@angular/core';
+import { Injectable, OnInit } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Card } from '../models/model';
+import { AppConfigService } from './app-config.service';
 
 const httpOptions = {
   headers: new HttpHeaders(
@@ -15,17 +16,22 @@ const httpOptions = {
   providedIn: 'root'
 })
 export class ApiService {
-  constructor(private http: HttpClient) { }
+  private apiBaseUrl: string;
+  constructor(
+    private http: HttpClient,
+    private appConfigService: AppConfigService)
+    {
+      this.apiBaseUrl = appConfigService.apiBaseUrl;
+    }
 
   getItems(): Observable<any> {
-    return this.http.get("http://localhost:55794/api/v1/payment-details", httpOptions);
+    return this.http.get(`${ this.apiBaseUrl }payment-details`, httpOptions);
   }
 
   requestPayment(card: Card): Observable<any> {
-    console.log(card);
     const headers = { 'content-type': 'application/json'}
     const body=JSON.stringify(card);
-    return this.http.post("http://localhost:55794/api/v1/payment/request-payment/", body,{'headers':headers})
+    return this.http.post(`${ this.apiBaseUrl }payment/request-payment/`, body,{'headers':headers})
   }
 
 }
