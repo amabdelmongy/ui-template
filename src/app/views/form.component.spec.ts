@@ -52,7 +52,7 @@ describe('Form formComponent', () => {
   }));
 
   it('should contain title', waitForAsync(() => {
-    expect(formComponent.title).toBe("Form");
+    expect(formComponent.title).toBe('Form');
   }));
 
   it('should invalid form when empty', () => {
@@ -61,9 +61,9 @@ describe('Form formComponent', () => {
 
   it('should invalid form', () => {
     expect(formComponent.Cardform.valid).toBeFalsy();
-    formComponent.Cardform.controls['number'].setValue("1324567890123456");
-    formComponent.Cardform.controls['expiry'].setValue("12/25");
-    formComponent.Cardform.controls['cvv'].setValue("123");
+    formComponent.Cardform.controls['number'].setValue('1324567890123456');
+    formComponent.Cardform.controls['expiry'].setValue('12/25');
+    formComponent.Cardform.controls['cvv'].setValue('123');
     expect(formComponent.Cardform.valid).toBeTruthy();
   });
 
@@ -75,22 +75,22 @@ describe('Form formComponent', () => {
 
   it('should number field minLength', () => {
     let number = formComponent.Cardform.controls['number'];
-    number.setValue("123")
+    number.setValue('123')
     let errors = number.errors || {};
     expect(errors.minlength).toBeTruthy();
   });
 
   it('should number field maxLength', () => {
     let number = formComponent.Cardform.controls['number'];
-    number.setValue("123465789013246567")
+    number.setValue('123465789013246567')
     let errors = number.errors || {};
     expect(errors.maxlength).toBeTruthy();
   });
 
   it('submitting a form return success', () => {
-    formComponent.Cardform.controls['number'].setValue("1324567890123456");
-    formComponent.Cardform.controls['expiry'].setValue("12/25");
-    formComponent.Cardform.controls['cvv'].setValue("123");
+    formComponent.Cardform.controls['number'].setValue('1324567890123456');
+    formComponent.Cardform.controls['expiry'].setValue('12/25');
+    formComponent.Cardform.controls['cvv'].setValue('123');
     formComponent.Submit();
 
     expect(mockToastrService.success).toHaveBeenCalled();

@@ -50,7 +50,7 @@ describe('Table component', () => {
   }));
 
   it('should contain title', waitForAsync(() => {
-    expect(tableComponent.title).toBe("Table");
+    expect(tableComponent.title).toBe('Table');
   }));
 
   it('should contain items', waitForAsync(() => {

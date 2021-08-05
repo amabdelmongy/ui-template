@@ -7,7 +7,7 @@ import { Card } from './models/model';
   templateUrl: 'table.component.html'
 })
 export class TableComponent {
-  title = "Table"
+  title = 'Table'
   items: Card[];
   constructor(
     private itemsService: ApiService,
@@ -26,7 +26,7 @@ export class TableComponent {
         },
         (error) => {
           console.log(error);
-          this.toastr.error("Error in Save data", error.message);
+          this.toastr.error('Error in Save data', error.message);
         }
       );
   }

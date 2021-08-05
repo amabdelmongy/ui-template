@@ -27,7 +27,7 @@ describe('AboutComponent', () => {
   }));
 
   it('should contain title', waitForAsync(() => {
-    expect(aboutComponent.title).toBe("About");
+    expect(aboutComponent.title).toBe('About');
   }));
 
   it('should contain information', waitForAsync(() => {
@@ -35,7 +35,7 @@ describe('AboutComponent', () => {
     expect(info.innerHTML.length).toBeGreaterThan(0);
   }));
 
-  it('should contain image', waitForAsync(() => { 
+  it('should contain image', waitForAsync(() => {
     const img = fixture.debugElement.query(By.css('img')).nativeElement;
     expect(img.src).toContain('assets/img/About.jpg');
   }));

@@ -7,7 +7,7 @@ import { ToastrService } from 'ngx-toastr';
   templateUrl: 'form.component.html'
 })
 export class FormComponent {
-  title = "Form"
+  title = 'Form';
   Cardform: FormGroup;
   ngOnInit(): void {
     this.Cardform = this.formBuilder.group({

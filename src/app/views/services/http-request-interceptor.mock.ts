@@ -15,7 +15,7 @@ export class HttpRequestInterceptorMock implements HttpInterceptor {
             if(request.url.indexOf(`payment-details`) > -1) {
                 return of(new HttpResponse({ status: 200, body: mockCards }));
             } else if (request.url.indexOf('request-payment') > -1) {
-                return of(new HttpResponse({ status: 200, body: "saved" }));
+                return of(new HttpResponse({ status: 200, body: 'saved' }));
             }
         }
         return next.handle(request);
