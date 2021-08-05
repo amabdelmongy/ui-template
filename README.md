@@ -37,8 +37,8 @@ run command
   ng test 
 ```
 
-### CoreUI Free Angular 2+ Admin Template
- - CoreUI is an Open Source Bootstrap Admin Template. But CoreUI is not just another Admin Template. It goes way beyond hitherto admin templates thanks to transparent code and file structure. And if that's not enough, let’s just add that CoreUI consists bunch of unique features and over 1000 high quality icons.
+### Thrid parties:-
+ - CoreUI Free Angular 2+ Admin Template;- CoreUI is an Open Source Bootstrap Admin Template. But CoreUI is not just another Admin Template. It goes way beyond hitherto admin templates thanks to transparent code and file structure. And if that's not enough, let’s just add that CoreUI consists bunch of unique features and over 1000 high quality icons.
  [CoreUI Free Angular 2+ Admin Template](https://github.com/coreui/coreui-free-angular-admin-template)
 
  - ngx-progressbar https://github.com/MurhafSousli/ngx-progressbar
