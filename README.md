@@ -1,9 +1,11 @@
-# Description
+# UI template
 
-Build a website about :)
+## Description
+
+Build user interface for a website :)
 
 ### Technology
- -  using Angular 11 , Angular cli , Type Script , Bootstrap , HTML, CSS and primeng.
+ -  using Angular 11 , Angular cli , Type Script , Bootstrap , HTML, CSS.
 
 
 ###  How to run the code
@@ -26,6 +28,12 @@ In order to avoid encountering a CORS browser error run the application with the
 ng serve --proxy proxy.config.json
 
 This provides a proxy path to the beer API. More information about that here. Navigate to http://localhost:4200/. The app will automatically reload if you change any of the source files.
+
+### Test server 
+run command 
+```
+  ng test 
+```
 
 ### CoreUI Free Angular 2+ Admin Template
  - CoreUI is an Open Source Bootstrap Admin Template. But CoreUI is not just another Admin Template. It goes way beyond hitherto admin templates thanks to transparent code and file structure. And if that's not enough, let’s just add that CoreUI consists bunch of unique features and over 1000 high quality icons.
