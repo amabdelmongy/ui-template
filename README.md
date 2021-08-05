@@ -25,7 +25,9 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 ### Development server
 In order to avoid encountering a CORS browser error run the application with the command:
 
-ng serve --proxy proxy.config.json
+```
+  ng serve
+```
 
 This provides a proxy path to the beer API. More information about that here. Navigate to http://localhost:4200/. The app will automatically reload if you change any of the source files.
 
